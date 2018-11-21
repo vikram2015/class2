@@ -4,7 +4,7 @@ angular.module('studentCtrl',['studentService'])
 
     function studentCtrl($scope,studentService,$state){
         $scope.name='vikram';
-        $scope.submitForm = function(){
+        $scope.addStudent = function(){
             studentService.saveStudent($scope.formData).then(function(data){
                 if(data.data.success){
                     $state.go('/');

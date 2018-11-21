@@ -34,11 +34,12 @@ app.get('*',function(req, res){
 
 
 app.post('/saveStudent', function(req, res){
+    console.log(req.body);
     var name = req.body.studentName;
-    var parent = req.body.studentParent;
-    if(name && parent){
+    var adress = req.body.studentAdress;
+    if(name && adress){
         res.send({success:true,MSG:'student saved successfully'});
     }else{
-        res.send({success:false,Msg:'Name and Parent name is mandatory field'});
+        res.send({success:false,Msg:'Name and adress is mandatory field'});
     }
 })
